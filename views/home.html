@@ -16,16 +16,16 @@
 
     <title>Waggy: the Dog Meeting Website</title>
 </head>
-<body>
+<body class="mb-3">
 
 <!-- Navigation bar -->
 <nav class="navbar navbar-light bg-light mb-3">
-    <a class="navbar-brand" href="./">Dog Meeting Website</a>
+    <a class="navbar-brand ms-3" href="./">Dog Meeting Website</a>
 </nav>
 
 <!-- Main content -->
-<div class="container">
-    <div class="row">
+<div class="container"> <!-- container -->
+    <div class="row"> <!-- row  -->
         <div class="col-6"> <!-- col 1 text -->
             <section> <!-- Intro to the website -->
                 <h1 class="text-center">Welcome to Waggy</h1>
@@ -39,26 +39,29 @@
             <section> <!-- User reviews of website-->
                 <h5 class="text-center">Hear what our users and their dogs are saying about us.</h5>
                 <hr>
-                <blockquote class="">
-                    <p>"My dog has never been so happy to go out and play with their friends now!"
-                        <span class="font-italic">- Okayu</span></p>
+                <blockquote class="mx-5">
+                    <p class="offset-1">"My dog has never been so happy to go out and play with their friends now!"
+                        <span class="fst-italic">- Okayu</span></p>
 
-                    <p>"I use to hate taking my dog out to play, but now I try to go out at least 4 times a week."
-                    <span class="font-italic">- Amelia</span></p>
+                    <p class="offset-1">"I use to hate taking my dog out to play, but now I try to go out at least 4 times a week."
+                    <span class="fst-italic">- Amelia</span></p>
 
-                    <p>"bark bark bark! bark bark bark, bark bark bark bark bark!"
-                        <span class="font-italic">- Korone</span></p>
+                    <p class="offset-1">"bark bark bark! bark bark bark, bark bark bark bark bark!"
+                        <span class="fst-italic">- Korone</span></p>
                 </blockquote>
                 <hr>
             </section>
 
             <div class="text-center"> <!-- Button to create profile-->
-                <a class="btn btn-info" href="./create-profile">Create a Profile!</a>
+                <a class="btn btn-info text-light" href="./create-profile">Create a Profile!</a>
             </div>
-        </div>
+        </div> <!-- col 1 end-->
 
-    </div>
-</div>
+        <div class="col-6"> <!--col 2 image-->
+            <img class="rounded" id="splash" src="views/images/splash.jpg" alt="two dogs">
+        </div> <!-- col2 end-->
+    </div> <!-- row end-->
+</div> <!-- container end-->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 

@@ -1,9 +1,3 @@
-<!--
-    Peter Eang
-    04/24/2021
-    https://peang.greenriverdev.com/328/dating/
-    The controller page for the dating website
--->
 <?php
 
 // this is my controller for the dating website

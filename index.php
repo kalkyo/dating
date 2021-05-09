@@ -51,12 +51,11 @@ $f3->route('GET|POST /profile2', function ()
         $_SESSION['states'] = $_POST['states'];
         $_SESSION['seeking'] = $_POST['seeking'];
         $_SESSION['bio'] = $_POST['bio'];
-        // Data validation will go here
 
         header('location: profile3');
     }
 
-    // display the lunch page
+    // display the profile page
     $view = new Template();
     echo $view->render('views/profilepage.html');
 });

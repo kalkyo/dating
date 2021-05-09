@@ -1,0 +1,80 @@
+<!--
+    Peter Eang
+    05/08/2021
+    https://peang.greenriverdev.com/328/dating/profile3
+    This is the interests page grabbing user choices for their own and their dogs interests
+-->
+<include href="views/header.html"/>
+<body class="mb-3">
+
+<!-- Navigation bar -->
+<nav class="navbar navbar-light bg-light mb-3">
+    <a class="navbar-brand ms-3" href="./">Dog Meeting Website</a>
+</nav>
+
+<!-- Main content -->
+<div class="container border border-1 rounded p-4 "> <!-- container -->
+    <h1>Interests</h1>
+    <hr>
+    <form action="#" method="post" class="form-horizontal ">
+        <div class="row"> <!-- Row 1-->
+            <div class="form-group mb-2">
+                <label class="fw-bold">In-door Interests</label>
+                <div>
+                    <label class="col-3"><input type="checkbox"
+                                                name="indoorint[]"
+                                                value="hide and seek"> Hide & Seek</label>
+                    <label class="col-3"><input type="checkbox"
+                                                name="indoorint[]"
+                                                value="napping"> Napping</label>
+                    <label class="col-3"><input type="checkbox"
+                                                name="indoorint[]"
+                                                value="shell game"> Shell Game</label>
+                    <label class="col-2"><input type="checkbox"
+                                                name="indoorint[]"
+                                                value="puzzle toys"> Puzzle Toys</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row"> <!-- Row 2-->
+            <div class="form-group">
+                <label class="col-sm-2 control-label fw-bold">Out-door Interests</label>
+                <div>
+                    <label class="col-3"><input type="checkbox"
+                                                name="outdoorint[]"
+                                                value="hiking"> Hiking</label>
+                    <label class="col-3"><input type="checkbox"
+                                                name="outdoorint[]"
+                                                value="swimming"> Swimming</label>
+                    <label class="col-3"><input type="checkbox"
+                                                name="outdoorint[]"
+                                                value="park"> Going to the park</label>
+                    <label class="col-2"><input type="checkbox"
+                                                name="outdoorint[]"
+                                                value="walking"> Walking</label>
+                    <label class="col-3"><input type="checkbox"
+                                                name="outdoorint[]"
+                                                value="fetch"> Fetching</label>
+                    <label class="col-3"><input type="checkbox"
+                                                name="outdoorint[]"
+                                                value="obstacle courses"> Obstacle Course</label>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="text-end">
+            <div class="text-end">
+                <input type="submit"  class="btn btn-info text-light" value="Next>">
+            </div>
+        </div>
+    </form>
+</div> <!-- container end-->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!--
+    Peter Eang
+    05/08/2021
+    https://peang.greenriverdev.com/328/dating/profile1
+-->
+<include href="views/header.html" xmlns="http://www.w3.org/1999/html"/>
+<body class="mb-3">
+
+<!-- Navigation bar -->
+<nav class="navbar navbar-light bg-light mb-3">
+    <a class="navbar-brand ms-3" href="./">Dog Meeting Website</a>
+</nav>
+
+<!-- Main content -->
+<div class="container border border-1 rounded p-4 " > <!-- container -->
+    <h1>Personal Information</h1>
+    <hr>
+    <form action="#" method="post" class="form-horizontal ">
+        <div class="row">
+            <div class="col-7">
+                <!-- get first name -->
+                <div class="form-group">
+                    <label for="fname" class="fw-bold"> First Name</label>
+
+                    <div data-tip="swag">
+                        <input class="form-control" type="text" name="fname" id="fname">
+                    </div>
+                </div>
+                <br>
+                <!-- get last name -->
+                <div class="form-group">
+                    <label for="lname" class="fw-bold">Last Name</label>
+
+                    <div>
+                        <input class="form-control" type="text" name="lname" id="lname">
+                    </div>
+                </div>
+                <br>
+                <!-- get age name -->
+                <div class="form-group">
+                    <label for="age" class="fw-bold">Age</label>
+
+                    <div>
+                        <input class="form-control input-large" type="text" name="age" id="age">
+                    </div>
+                </div>
+                <br>
+                <!-- get gender -->
+                <div class="form-group">
+                    <label class="col-sm-2 control-label fw-bold">Gender</label>
+                    <div class="col-sm-4">
+                        <label><input type="radio" name="gender"
+                                      id="male" value="Male"> Male</label>
+                        <label><input class="ms-3" type="radio" name="gender"
+                                      id="female" value="Female"> Female</label>
+                    </div>
+                </div>
+                <br>
+                <!-- get phone number -->
+                <div class="form-group">
+                    <label for="phone" class="control-label fw-bold">Phone Number</label>
+
+                    <div>
+                        <input class="form-control" type="text" name="phone" id="phone">
+                    </div>
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="mt-4 p-3 bg-light border rounded"><span class="fw-bold">Note:</span>
+                All information entered is protected by our <span class="text-primary">privacy policy</span>.
+                    Profile information can
+                only be viewed by others with your permission.</div>
+            </div>
+        </div>
+
+
+        <div class="text-end">
+            <input type="submit"  class="btn btn-info text-light" value="Next>">
+        </div>
+    </form>
+</div> <!-- container end-->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+</body>
+</html>

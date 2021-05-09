@@ -1,0 +1,69 @@
+<!--
+    Peter Eang
+    05/08/2021
+    https://peang.greenriverdev.com/328/dating/summary
+    This is the summary page showing the user their inputted information for them or their dog.
+    following a silhouette photo of a dog and
+-->
+<include href="views/header.html"/>
+<body>
+<!-- Navigation bar -->
+<nav class="navbar navbar-light bg-light mb-3">
+    <a class="navbar-brand ms-3" href="./">Dog Meeting Website</a>
+</nav>
+
+<div class="container border border-2 rounded">
+    <div class="row">
+        <div class="col-6 mt-3">
+            <div class="">
+                <table class="m-2 table table-bordered">
+                    <tbody>
+                    <tr>
+                      <td>Name: {{ @SESSION.fname}} {{ @SESSION.lname}}</td>
+                    </tr>
+                    <tr>
+                      <td>Gender: {{ @SESSION.gender }}</td>
+                    </tr>
+                    <tr>
+                      <td>Age: {{ @SESSION.age }}</td>
+                    </tr>
+                    <tr>
+                      <td>Phone: {{ @SESSION.phone }}</td>
+                    </tr>
+                    <tr>
+                      <td>Email: {{ @SESSION.email }}</td>
+                    </tr>
+                    <tr>
+                      <td>State: {{ @SESSION.states }}</td>
+                    </tr>
+                    <tr>
+                      <td>Seeking: {{@SESSION.seeking}}</td>
+                    </tr>
+                    <tr>
+                      <td>In-door interests: {{ @SESSION.indoorint }}</td>
+                    </tr>
+                    <tr>
+                      <td>Out-door interests: {{ @SESSION.outdoorint }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="text-center">
+                <img class="rounded" id="splash" src="images/dog.jpg" alt="two dogs">
+                <p>Biography</p>
+                <p>{{ @SESSION.bio }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-center mb-3">
+            <input type="submit" class="btn btn-info text-light" value="Contact Me">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

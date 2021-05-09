@@ -3,3 +3,14 @@
     04/24/2021
     Style sheet for pet dating website
 */
+
+#form-border
+{
+    border-radius: 3px;
+    border: #1b1e21;
+}
+
+#bio
+{
+    height: 150px;
+}

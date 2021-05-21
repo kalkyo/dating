@@ -24,18 +24,26 @@
                     <label for="fname" class="fw-bold"> First Name</label>
 
                     <div data-tip="swag">
-                        <input class="form-control" type="text" name="fname" id="fname">
+                        <input class="form-control" type="text" name="fname" id="fname" value="{{ @userName }}">
                     </div>
                 </div>
+                <!-- error message for invalid name -->
+                <check if="{{ isset(@errors['name']) }}">
+                    <span class="err">{{ @errors['name'] }}</span>
+                </check>
                 <br>
                 <!-- get last name -->
                 <div class="form-group">
                     <label for="lname" class="fw-bold">Last Name</label>
 
                     <div>
-                        <input class="form-control" type="text" name="lname" id="lname">
+                        <input class="form-control" type="text" name="lname" id="lname" value="{{ @userName }}">
                     </div>
                 </div>
+                <!-- error message for invalid name -->
+                <check if="{{ isset(@errors['name']) }}">
+                    <span class="err">{{ @errors['name'] }}</span>
+                </check>
                 <br>
                 <!-- get age name -->
                 <div class="form-group">

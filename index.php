@@ -9,8 +9,10 @@ error_reporting(E_ALL);
 // start a session
 session_start();
 
-// require autoload file
+//require autoload file
 require_once ('vendor/autoload.php');
+require_once ('model/data-layer.php');
+require_once ('model/validation.php');
 
 // instantiate fat-free
 $f3 = Base::instance();
@@ -23,18 +25,43 @@ $f3->route('GET /', function (){
     echo $view->render('views/home.html');
 });
 
-$f3->route('GET|POST /profile1', function ()
+$f3->route('GET|POST /profile1', function ($f3)
 {
+
+    //Reinitialize a session array
+    $_SESSION = array();
+
+    //Initialize variables to store user input
+    $userName = "";
+    // $userNameL = "";
+
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
+        $userName = $_POST['name'];
+        // $userNameL = $_POST['lname'];
+
+        //if name is valid store data
+        if (validName($_POST['name'])) {
+            $_SESSION['name'] = $userName;
+        }
+        //set an error if not valid
+        else {
+            $f3->set('errors["name"]', 'Please enter a valid name');
+        }
+
         $_SESSION['fname'] = $_POST['fname'];
         $_SESSION['lname'] = $_POST['lname'];
         $_SESSION['age'] = $_POST['age'];
         $_SESSION['gender'] = $_POST['gender'];
         $_SESSION['phone'] = $_POST['phone'];
 
-        header('location: profile2');
+        if (empty($f3->get('errors'))) {
+            header('location: profile2');
+        }
     }
+
+    //store the user input to the hive
+    $f3->set('userName', $userName);
 
     //display the personal information page
     $view = new Template();

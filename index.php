@@ -43,7 +43,6 @@ $f3->route('GET|POST /profile1', function ($f3)
         $userLName = $_POST['lname'];
         $userAge = $_POST['age'];
         $userPhone = $_POST['phone'];
-        $userEmail = $_POST['email'];
 
 
         //if first name is valid store data

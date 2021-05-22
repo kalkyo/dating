@@ -10,7 +10,7 @@
 
 <!-- Navigation bar -->
 <nav class="navbar navbar-light bg-light mb-3">
-    <a class="navbar-brand ms-3" href="./">Dog Meeting Website</a>
+    <a class="navbar-brand ms-3" href="./">Dog Meeting Website!!</a>
 </nav>
 
 <!-- Main content -->
@@ -100,12 +100,14 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label fw-bold">Seeking</label>
                     <div>
-                        <label><input type="radio" name="seeking"
-                                      id="male" value="male"> Male Dog</label>
-                        <label><input class="ms-2" type="radio" name="seeking"
-                                      id="female" value="female"> Female Dog</label>
-                        <label><input class="ms-2" type="radio" name="seeking"
-                                      id="any" value="female"> Any</label>
+                        <repeat group="{{ @seekedGenders }}" value="{{ @seeking }}">
+                            <label class="seeking"><input type="radio" name="seeking"
+                                          id="{{ @seeking}}" value="{{ @seeking}}"
+                                          <check if="{{ @seeking == @userSeeking }}">
+                                              checked="checked"</check>
+                                > {{ ucfirst(@seeking) }}
+                            </label>
+                        </repeat>
                     </div>
                 </div>
                 <br>

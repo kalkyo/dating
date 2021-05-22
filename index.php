@@ -116,10 +116,12 @@ $f3->route('GET|POST /profile2', function ($f3)
 
     //Initialize variables to store user input
     $userEmail = "";
+    $userSeeking = "";
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
         $userEmail = $_POST['email'];
+        $userSeeking = $_POST['seeking'];
 
         //if email is valid store data
         if (validEmail($userEmail)) {
@@ -132,7 +134,7 @@ $f3->route('GET|POST /profile2', function ($f3)
 
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['states'] = $_POST['states'];
-        $_SESSION['seeking'] = $_POST['seeking'];
+        $_SESSION['seeking'] = $userSeeking;
         $_SESSION['bio'] = $_POST['bio'];
 
         if (empty($f3->get('errors'))) {
@@ -140,8 +142,12 @@ $f3->route('GET|POST /profile2', function ($f3)
         }
     }
 
+    //Get the data from the model
+    $f3->set('seekedGenders', getSeeking());
+
     //store the user input to the hive
     $f3->set('userEmail', $userEmail);
+    $f3->set('userSeeking', $userSeeking);
 
     // display the profile page
     $view = new Template();

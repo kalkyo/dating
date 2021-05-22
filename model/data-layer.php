@@ -10,6 +10,11 @@ function getGender()
     return array('Male', 'Female', 'Other');
 }
 
+function getSeeking()
+{
+    return array('Male Dog', 'Female Dog', 'Other Dog');
+}
+
 function getIndoor()
 {
     return array('hideandseek' => 'Hide & Seek',

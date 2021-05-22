@@ -36,6 +36,7 @@ $f3->route('GET|POST /profile1', function ($f3)
     $userLName ="";
     $userAge = "";
     $userPhone = "";
+    $userGender ="";
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
@@ -43,6 +44,7 @@ $f3->route('GET|POST /profile1', function ($f3)
         $userLName = $_POST['lname'];
         $userAge = $_POST['age'];
         $userPhone = $_POST['phone'];
+        $userGender = $_POST['gender'];
 
 
         //if first name is valid store data
@@ -85,7 +87,7 @@ $f3->route('GET|POST /profile1', function ($f3)
         $_SESSION['fname'] = $_POST['fname'];
         $_SESSION['lname'] = $_POST['lname'];
         $_SESSION['age'] = $_POST['age'];
-        $_SESSION['gender'] = $_POST['gender'];
+        $_SESSION['gender'] = $userGender;
         $_SESSION['phone'] = $_POST['phone'];
 
         if (empty($f3->get('errors'))) {
@@ -93,11 +95,15 @@ $f3->route('GET|POST /profile1', function ($f3)
         }
     }
 
+    //Get the data from the model
+    $f3->set('genders', getGender());
+
     //store the user input to the hive
     $f3->set('userFName', $userFName);
     $f3->set('userLName', $userLName);
     $f3->set('userAge', $userAge);
     $f3->set('userPhone', $userPhone);
+    $f3->set('userGender', $userGender);
 
     //display the personal information page
     $view = new Template();

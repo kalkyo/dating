@@ -5,6 +5,11 @@
  *
  */
 
+function getGender()
+{
+    return array('Male', 'Female', 'Other');
+}
+
 function getIndoor()
 {
     return array('hideandseek' => 'Hide & Seek',

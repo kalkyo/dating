@@ -24,12 +24,13 @@
                     <label for="fname" class="fw-bold"> First Name</label>
 
                     <div data-tip="swag">
-                        <input class="form-control" type="text" name="fname" id="fname" value="{{ @userName }}">
+                        <input class="form-control" type="text" name="fname"
+                               id="fname" value="{{ @userFName }}">
                     </div>
                 </div>
-                <!-- error message for invalid name -->
-                <check if="{{ isset(@errors['name']) }}">
-                    <span class="err">{{ @errors['name'] }}</span>
+                <!-- error message for invalid first name -->
+                <check if="{{ isset(@errors['fname']) }}">
+                    <span class="err">{{ @errors['fname'] }}</span>
                 </check>
                 <br>
                 <!-- get last name -->
@@ -37,22 +38,29 @@
                     <label for="lname" class="fw-bold">Last Name</label>
 
                     <div>
-                        <input class="form-control" type="text" name="lname" id="lname" value="{{ @userName }}">
+                        <input class="form-control" type="text" name="lname"
+                               id="lname" value="{{ @userLName }}">
                     </div>
                 </div>
-                <!-- error message for invalid name -->
-                <check if="{{ isset(@errors['name']) }}">
-                    <span class="err">{{ @errors['name'] }}</span>
+                <!-- error message for invalid for last name -->
+                <check if="{{ isset(@errors['lname']) }}">
+                    <span class="err">{{ @errors['lname'] }}</span>
                 </check>
                 <br>
                 <!-- get age name -->
                 <div class="form-group">
                     <label for="age" class="fw-bold">Age</label>
-
                     <div>
-                        <input class="form-control input-large" type="text" name="age" id="age">
+                        <input class="form-control input-large" type="text"
+                               name="age" id="age" value="{{ @userAge }}"
+                               placeholder="18-118">
                     </div>
                 </div>
+                <!-- error message for invalid for age -->
+                <check if="{{ isset(@errors['age']) }}">
+                    <span class="err">{{ @errors['age'] }}</span>
+                </check>
+                <br>
                 <br>
                 <!-- get gender -->
                 <div class="form-group">
@@ -62,6 +70,8 @@
                                       id="male" value="Male"> Male</label>
                         <label><input class="ms-3" type="radio" name="gender"
                                       id="female" value="Female"> Female</label>
+                        <label><input class="ms-3" type="radio" name="gender"
+                                      id="other" value="Other"> Other</label>
                     </div>
                 </div>
                 <br>
@@ -70,13 +80,20 @@
                     <label for="phone" class="control-label fw-bold">Phone Number</label>
 
                     <div>
-                        <input class="form-control" type="text" name="phone" id="phone">
+                        <input class="form-control" type="text" name="phone"
+                               id="phone" value="{{ @userPhone }}" placeholder="111-222-3333">
                     </div>
                 </div>
+                <!-- error message for invalid for phone -->
+                <check if="{{ isset(@errors['phone']) }}">
+                    <span class="err">{{ @errors['phone'] }}</span>
+                </check>
             </div>
             <div class="col-5">
-                <div class="mt-4 p-3 bg-light border rounded"><span class="fw-bold">Note:</span>
-                All information entered is protected by our <span class="text-primary">privacy policy</span>.
+                <div class="mt-4 p-3 bg-light border rounded">
+                    <span class="fw-bold">Note:</span>
+                All information entered is protected by our
+                    <span class="text-primary">privacy policy</span>.
                     Profile information can
                 only be viewed by others with your permission.</div>
             </div>

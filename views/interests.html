@@ -21,19 +21,19 @@
             <div class="form-group mb-2">
                 <label class="fw-bold">In-door Interests</label>
                 <div>
-                    <label class="col-3"><input type="checkbox"
-                                                name="indoorint[]"
-                                                value="hide and seek"> Hide & Seek</label>
-                    <label class="col-3"><input type="checkbox"
-                                                name="indoorint[]"
-                                                value="napping"> Napping</label>
-                    <label class="col-3"><input type="checkbox"
-                                                name="indoorint[]"
-                                                value="shell game"> Shell Game</label>
-                    <label class="col-2"><input type="checkbox"
-                                                name="indoorint[]"
-                                                value="puzzle toys"> Puzzle Toys</label>
+                    <repeat group="{{ @indoorints }}" value="{{ @indoorint }}">
+                        <label class="col-2"><input type="checkbox"
+                                      name="indoor[]"
+                                      value="{{ @indoorint }}"
+                            <check if="{{ in_array(@indoorint, @userIndoorChoices) }}">
+                                checked="checked"
+                            </check>
+                            > {{ @indoorint }}</label>
+                    </repeat>
                 </div>
+                <check if="{{ isset(@errors['indoor']) }}">
+                    <span class="err">{{ @errors['indoor'] }}</span>
+                </check>
             </div>
         </div>
 
@@ -41,26 +41,16 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label fw-bold">Out-door Interests</label>
                 <div>
-                    <label class="col-3"><input type="checkbox"
-                                                name="outdoorint[]"
-                                                value="hiking"> Hiking</label>
-                    <label class="col-3"><input type="checkbox"
-                                                name="outdoorint[]"
-                                                value="swimming"> Swimming</label>
-                    <label class="col-3"><input type="checkbox"
-                                                name="outdoorint[]"
-                                                value="park"> Going to the park</label>
-                    <label class="col-2"><input type="checkbox"
-                                                name="outdoorint[]"
-                                                value="walking"> Walking</label>
-                    <label class="col-3"><input type="checkbox"
-                                                name="outdoorint[]"
-                                                value="fetch"> Fetching</label>
-                    <label class="col-3"><input type="checkbox"
-                                                name="outdoorint[]"
-                                                value="obstacle courses"> Obstacle Course</label>
-
+                    <repeat group="{{ @outdoorints }}" value="{{ @outdoorint }}">
+                        <label class="col-2"><input type="checkbox"
+                                                    name="outdoor[]"
+                                                    value="{{ @outdoorint }}"
+                        > {{ @outdoorint }}</label>
+                    </repeat>
                 </div>
+                <check if="{{ isset(@errors['outdoor']) }}">
+                    <span class="err">{{ @errors['outdoor'] }}</span>
+                </check>
             </div>
         </div>
 

@@ -5,13 +5,20 @@
  *
  */
 
-function getFlavors()
+function getIndoor()
 {
-    return array('grasshopper' => 'The Grasshopper',
-                 'maple' => 'Whiskey Maple Bacon',
-                 'carrot' => 'Carrot Walnut',
-                 'caramel' => 'Salted Caramel Cupcake',
-                 'velvet' => 'Red Velvet',
-                 'lemon' => 'Lemon Drop',
-                 'tiramisu' => 'Tiramisu');
+    return array('hideandseek' => 'Hide & Seek',
+                 'napping' => 'Napping',
+                 'shellgame' => 'Shell Game',
+                 'puzzletoys' => 'Puzzle Toys');
+}
+
+function getOutdoor()
+{
+    return array('hiking' => 'Hiking',
+        'swimming' => 'Swimming',
+        'goingtothepark' => 'Going to the park',
+        'walking' => 'Walking',
+        'fetching' => 'Fetching',
+        'obstaclecourse' => 'Obstacle Course');
 }

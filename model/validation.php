@@ -6,17 +6,72 @@
  */
 
 //returns the name if the name is valid otherwise false
-function validName($name)
+
+ function validName($name)
 {
-    if ($name != "" && ctype_alpha($name))
-    {
+    if (ctype_alpha($name)) {
         return $name;
+    } else if ($name == "") {
+        return !empty($name);
     }
-    return !empty($name);
 }
 
-//returns true as long as 1 flavor is selected
-function validFlavor($userFlavors)
+//returns the age if the age is valid
+function validAge($age)
 {
-    return !is_null($userFlavors);
+    $HIGHEST_AGE = 118;
+    $LOWEST_AGE = 18;
+    if (ctype_digit($age)) {
+        if ($age < $LOWEST_AGE || $age > $HIGHEST_AGE) {
+            return !ctype_digit($age);
+        }
+        return !empty($age);
+    }
+
+}
+
+//returns the phone number if it is valid following the regex
+function validPhone($phone)
+{
+   if (preg_match('/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/', $phone)) {
+       return $phone;
+   } else {
+       return !empty($age);
+   }
+}
+
+//returns the email if it is valid
+function validEmail($email)
+{
+    return !!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@
+([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $email);;
+}
+
+//returns the outdoor interests if they are valid
+function validIndoor($indoorint)
+{
+    $validIndoor = getIndoor();
+
+    //Make sure each selected condiment is valid
+    foreach ($indoorint as $userIndoorChoices) {
+        if (!in_array($userIndoorChoices, $validIndoor)) {
+            return false;
+        }
+    }
+    //All choices are valid
+    return true;
+}
+
+function validOutdoor($outdoorint)
+{
+    $validOutdoor = getOutdoor();
+
+    //Make sure each selected condiment is valid
+    foreach ($outdoorint as $userOutdoorChoices) {
+        if (!in_array($userOutdoorChoices, $validOutdoor)) {
+            return false;
+        }
+    }
+    //All choices are valid
+    return true;
 }

@@ -25,9 +25,14 @@
                     <label for="email" class="fw-bold">Email</label>
 
                     <div class="col">
-                        <input class="form-control" type="text" name="email" id="email">
+                        <input class="form-control" type="text" name="email" id="email" value="{{ @userEmail }}">
                     </div>
                 </div>
+                <!-- error message for invalid for phone -->
+                <check if="{{ isset(@errors['email']) }}">
+                    <span class="err">{{ @errors['email'] }}</span>
+                </check>
+
                 <br>
                 <!-- get State -->
                 <div class="form-group">

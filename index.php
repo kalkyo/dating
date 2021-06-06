@@ -14,6 +14,9 @@ require_once ('model/validation.php');
 // start a session
 session_start();
 
+//Require the file that defines the member class
+require ('classes/member.php');
+
 // instantiate fat-free
 $f3 = Base::instance();
 

@@ -1,34 +1,38 @@
 <?php
 
 /*  data-layer.php
- *  Return data for the cupcake website
+ *  Return data for the dating website
  *
  */
 
-function getGender()
+class DataLayer
 {
-    return array('Male', 'Female', 'Other');
+    static function getGender()
+    {
+        return array('Male', 'Female', 'Other');
+    }
+
+    static function getSeeking()
+    {
+        return array('Male Dog', 'Female Dog', 'Other Dog');
+    }
+
+    static function getIndoor()
+    {
+        return array('hideandseek' => 'Hide & Seek',
+            'napping' => 'Napping',
+            'shellgame' => 'Shell Game',
+            'puzzletoys' => 'Puzzle Toys');
+    }
+
+    static function getOutdoor()
+    {
+        return array('hiking' => 'Hiking',
+            'swimming' => 'Swimming',
+            'goingtothepark' => 'Going to the park',
+            'walking' => 'Walking',
+            'fetching' => 'Fetching',
+            'obstaclecourse' => 'Obstacle Course');
+    }
 }
 
-function getSeeking()
-{
-    return array('Male Dog', 'Female Dog', 'Other Dog');
-}
-
-function getIndoor()
-{
-    return array('hideandseek' => 'Hide & Seek',
-                 'napping' => 'Napping',
-                 'shellgame' => 'Shell Game',
-                 'puzzletoys' => 'Puzzle Toys');
-}
-
-function getOutdoor()
-{
-    return array('hiking' => 'Hiking',
-        'swimming' => 'Swimming',
-        'goingtothepark' => 'Going to the park',
-        'walking' => 'Walking',
-        'fetching' => 'Fetching',
-        'obstaclecourse' => 'Obstacle Course');
-}

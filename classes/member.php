@@ -21,14 +21,14 @@ class Member
 
     /**
      * Member constructor.
-     * @param string $_fname User's first name, default unknown
-     * @param string $_lname User's last name, default unknown
-     * @param int $_age User's age, default 0
-     * @param string $_gender User's gender, default unknown
-     * @param string $_phone User's Phone #, default 000-000-0000
+     * @param string $_fname User's first name, default ""
+     * @param string $_lname User's last name, default ""
+     * @param int $_age User's age, default ""
+     * @param string $_gender User's gender, default ""
+     * @param string $_phone User's Phone #, default ""
      * @return void
      */
-    function __construct($_fname="unknown", $_lname="unknown", $_age=0, $_gender="Unknown", $_phone="000-000-0000")
+    function __construct($_fname="", $_lname="", $_age="", $_gender="", $_phone="")
     {
         $this->_fname = $_fname;
         $this->_lname = $_lname;

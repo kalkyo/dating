@@ -94,7 +94,9 @@
                 <!-- get premium membership -->
                 <h6 class="mt-4">Premium Membership</h6>
                 <div class="form-check form-group">
-                    <input type="checkbox" class="form-check-input" name="premium" id="premium">
+                    <input type="checkbox" class="form-check-input"
+                           name="premium" id="premium" value="premium"
+                    <check if="{{ @user == 'premium' }}">checked="checked"</check>>
                     <label class="form-check-label" for="premium">Sign me up for a Premium Account!</label>
                 </div>
 

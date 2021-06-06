@@ -74,7 +74,6 @@
                                 > {{ ucfirst(@gender) }}
                             </label>
                         </repeat>
-
                     </div>
                 </div>
                 <br>
@@ -91,7 +90,16 @@
                 <check if="{{ isset(@errors['phone']) }}">
                     <span class="err">{{ @errors['phone'] }}</span>
                 </check>
+
+                <!-- get premium membership -->
+                <h6 class="mt-4">Premium Membership</h6>
+                <div class="form-check form-group">
+                    <input type="checkbox" class="form-check-input" name="premium" id="premium">
+                    <label class="form-check-label" for="premium">Sign me up for a Premium Account!</label>
+                </div>
+
             </div>
+
             <div class="col-5">
                 <div class="mt-4 p-3 bg-light border rounded">
                     <span class="fw-bold">Note:</span>

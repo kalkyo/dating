@@ -23,7 +23,6 @@
                 <!-- get email name -->
                 <div class="form-group">
                     <label for="email" class="fw-bold">Email</label>
-
                     <div class="col">
                         <input class="form-control" type="text" name="email" id="email" value="{{ @userEmail }}">
                     </div>
@@ -32,7 +31,6 @@
                 <check if="{{ isset(@errors['email']) }}">
                     <span class="err">{{ @errors['email'] }}</span>
                 </check>
-
                 <br>
                 <!-- get State -->
                 <div class="form-group">

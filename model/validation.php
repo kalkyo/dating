@@ -27,7 +27,6 @@ function validAge($age)
         }
         return !empty($age);
     }
-
 }
 
 //returns the phone number if it is valid following the regex

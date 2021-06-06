@@ -11,21 +11,17 @@ require_once ('vendor/autoload.php');
 require_once ('model/data-layer.php');
 require_once ('model/validation.php');
 
-// start a session
+// start a session AFTER the autoload
 session_start();
 
-//Require the file that defines the member class
-require ('classes/member.php');
-
-// instantiate fat-free
+// instantiate Fat-Free and controller
 $f3 = Base::instance();
+$con = new Controller($f3);
 
 // define default route
 $f3->route('GET /', function (){
 
-   // display the home page
-    $view = new Template();
-    echo $view->render('views/home.html');
+   $GLOBALS['con']->home();
 });
 
 $f3->route('GET|POST /profile1', function ($f3)
@@ -41,6 +37,7 @@ $f3->route('GET|POST /profile1', function ($f3)
     $userPhone = "";
     $userGender ="";
 
+    // For if the form is submitted
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
         $userFName = $_POST['fname'];

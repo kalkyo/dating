@@ -6,13 +6,11 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// start a session
-session_start();
-
 //require autoload file
 require_once ('vendor/autoload.php');
-require_once ('model/data-layer.php');
-require_once ('model/validation.php');
+
+// start a session
+session_start();
 
 // instantiate fat-free
 $f3 = Base::instance();
